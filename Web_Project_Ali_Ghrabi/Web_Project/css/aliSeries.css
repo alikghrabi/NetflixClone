@@ -1,0 +1,535 @@
+/* General Style */
+*{
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+body{
+    overflow-x: hidden;
+    background-color: black;
+}
+
+/* Header Section */
+header{
+    position: absolute;
+    margin-top: -50px;
+    left: 20px;
+}
+
+/* Navbar Section */
+
+nav ul {
+    list-style: none;
+    display: flex;
+    flex-direction: column;
+    height: fit-content;
+    width: 250px;
+    background-color: black;
+    justify-content: space-between;
+    opacity: 0.9;
+    padding-bottom: 40px;
+    padding-left: 0px;
+    position: absolute;
+    transform: translate(100vw);
+    z-index: 1000;
+}
+
+nav ul a {
+    color: white;
+    text-decoration: none;
+}
+
+nav ul li {
+    display: flex;
+    padding-top: 20px;
+    padding-bottom: 20px;
+    padding-left: 40px;
+    gap: 30px;
+    font-size: large;
+    transition: .3s;
+}
+
+nav i {
+    color: white;
+}
+
+nav button {
+    width: 61px;
+    height: fit-content;
+    padding: 20px;
+    cursor: pointer;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-radius: 50%;
+    border: none;
+    font-weight: bold;
+    color: white;
+    font-size: large;
+    background-color: inherit;
+}
+
+nav ul li:first-child {
+    background-size: cover;
+    padding-left: 20px;
+    padding-bottom: 0px;
+    padding-top: 0px;
+}
+
+nav ul li:not(:first-child):hover{
+    background-color: red;
+    padding-left: 50px;
+}
+
+nav ul li:last-child {
+    margin-bottom: calc(100vh - 406px);
+}
+
+nav ul button:hover {
+    background-color: red;
+}
+
+/* Background_Image style */
+
+.background-image-breaking-bad{
+    height: 100vh;
+    background-image: linear-gradient(rgba(0,0,0,1),rgba(0,0,0,0.6),rgba(0,0,0,0.6),rgba(0,0,0,0.6),rgba(0,0,0,0.6),rgba(0,0,0,1)),url(../Page/BreakingBad/Background/back.jpg);
+    background-blend-mode: darken;
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+
+.background-image-money-heist{
+    height: 100vh;
+    background-image: linear-gradient(rgba(0,0,0,1),rgba(0,0,0,0.6),rgba(0,0,0,0.6),rgba(0,0,0,0.6),rgba(0,0,0,0.6),rgba(0,0,0,1)),url(../Page/MoneyHeist/Seasons/season4.jpg);
+    background-blend-mode: darken;
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+
+.background-image-prison-break{
+    height: 100vh;
+    background-image: linear-gradient(rgba(0,0,0,1),rgba(0,0,0,0.6),rgba(0,0,0,0.6),rgba(0,0,0,0.6),rgba(0,0,0,0.6),rgba(0,0,0,1)),url(../Page/PrisonBreak/background/back1.webp);
+    background-blend-mode: darken;
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+
+.background-image-the-flash{
+    height: 100vh;
+    background-image: linear-gradient(rgba(0,0,0,1),rgba(0,0,0,0.6),rgba(0,0,0,0.6),rgba(0,0,0,0.6),rgba(0,0,0,0.6),rgba(0,0,0,1)),url(../Page/TheFlash/background/back.webp);
+    background-blend-mode: darken;
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+.background-image-rick-morty{
+    height: 100vh;
+    background-image: linear-gradient(rgba(0,0,0,1),rgba(0,0,0,0.6),rgba(0,0,0,0.6),rgba(0,0,0,0.6),rgba(0,0,0,0.6),rgba(0,0,0,1)),url(../Page/Rick_&_Morty/backgrounmd/back.webp);
+    background-blend-mode: darken;
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+
+.background-image-GOT{
+    height: 100vh;
+    background-image: linear-gradient(rgba(0,0,0,1),rgba(0,0,0,0.6),rgba(0,0,0,0.6),rgba(0,0,0,0.6),rgba(0,0,0,0.6),rgba(0,0,0,1)),url(../Page/GameofThrones/Background/back3.jpg);
+    background-blend-mode: darken;
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+
+.background-image-Lucifer{
+    height: 100vh;
+    background-image: linear-gradient(rgba(0,0,0,1),rgba(0,0,0,0.6),rgba(0,0,0,0.6),rgba(0,0,0,0.6),rgba(0,0,0,0.6),rgba(0,0,0,1)),url(../Page/Lucifer/Background/back.jpg);
+    background-blend-mode: darken;
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+/* Overlay_Content Style */
+
+.overlay-content{
+    width: 100vw;  
+    color: #fff; 
+    display: flex;  
+}
+/* Left_Side Style */
+
+.left-side{
+    width: 35em;
+    margin-left: 120px;
+    margin-top: 180px;
+    transition: .2s;
+}
+
+.left-side-image{
+    position: relative;
+    width: 270px;
+    height: 380px;
+    display: block;
+    overflow: hidden;
+    transition: .2s;
+    filter: drop-shadow(10px 10px 20px rgb(2, 2, 2));
+}
+
+.image{
+    display: block;
+    width: 270px;
+    height: 380px;
+}
+
+.overlay-icons{
+    position: absolute;
+    transition: all .2s ease-in;
+    opacity: 0;
+    background-color: #eee;
+}
+
+.overlay-icons a{
+    display: block;
+    text-align: center;
+    margin: 15px 0;
+    color: #fff;
+    text-decoration: none;
+    transition: .2s;
+}
+
+.overlay-icons a:hover{
+    color: red;
+}
+
+.left-side-image:hover .overlay-icons{
+    opacity: 1;
+    border-bottom-left-radius: 20px;
+}
+
+.left-to-right{
+    background-color: rgba(0, 0, 0, 0.5);
+    width: 0;
+    height: 50%;
+    right: 0;
+    top: 0;
+}
+
+.left-side-image:hover .left-to-right{
+    width: 20%;
+}
+
+.under-icon{
+    font-size: 10px;
+}
+
+/* Right_Side Style */
+
+.right-side{
+    color: #fff;
+    width: 65em;
+    margin-top: 120px;
+    margin-left: -100px;
+    margin-right: 100px;
+}
+
+/* Series Title */
+
+.series-title{
+    width: fit-content;
+    transition: .2s;
+}
+
+.series-title:hover{ 
+    color: red;
+}
+
+/* Icons Bar */
+
+.icon-by-own{
+    font-weight: bold;
+    font-size: medium;
+    border-radius: 3px;
+    color: yellow;
+    padding: 2px;
+    border: 1px solid yellow;
+}
+
+.icons-bar{
+    font-size: 20px;
+}
+
+.icons-bar a{
+    padding-left: 40px;
+}
+
+.icons-bar i{
+    font-size: 20px;
+    color: yellow;
+}
+
+/* Series Overview */
+
+.series-overview{
+    width: 30px;
+    transition: .2s;
+}
+
+.series-overview:hover{
+    color: red;
+}
+
+/* Tables */
+
+.table{
+    border-collapse: collapse;
+    border-left: 0;
+    border-color: #eee;
+}
+
+.column {
+    float: left;
+    width: 50%;
+}
+
+.row::after {
+    content: "";
+    clear: both;
+    display: table;                  
+}
+
+.table_content_space{
+    padding: 5px;
+}
+
+.table_content_space b:hover{
+    color: red;
+    transition: .2s;
+}
+
+/* Buttons Bar */
+
+.buttons{
+    color: #fff;
+    background-color: rgb(15, 15, 15);
+    padding: 12px;
+    margin: 10px;
+    border-radius: 15px;
+    transition: .3s;
+}
+
+.buttons:hover{
+    color: red;
+}
+
+/* Drop-down List */
+
+#myDropdown{
+    display: block;
+    border: 2px solid #ccc;
+    color: rgb(243, 239, 239);
+    border-radius: 20px;
+    margin-top: 15px;
+    padding: 10px 40px;
+    font-size: 18px;
+    background-color: rgb(0, 0, 0);
+    outline: none;
+    box-shadow: 0 0 3px rgba(0, 0, 0, 0.2);
+    font-size: 20px;
+    font-weight: bold;
+    margin-left: 30px;
+}
+
+/* scrolling seasons*/
+
+.season-title {
+    margin-top: 30px;
+    margin-left: 30px;
+    font-size: 40px;
+    font-weight: bold;
+    font-style: italic;
+    color: red;
+    text-decoration: solid;
+    padding-bottom: 10px;
+}
+
+.seasons-wrapper {
+    position: relative;
+    overflow: auto;
+    display: flex;
+    align-items: center;
+    height: 300px;
+    transition: all .5s ease-in-out;
+    overflow-y: hidden;
+}
+
+.seasons-wrapper::-webkit-scrollbar {
+    display: none;
+}
+
+.season-item {
+    margin-left: 15px;
+    margin-right: 15px;
+    position: relative;
+}
+
+.shift{
+    margin-left: 30px;
+}
+
+.season-item-desc {
+    width: 100%;
+    height: 100%;
+    color: white;
+    left: 0;
+    top: 100%;
+    padding: 0px 20px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-evenly;
+    font-weight: bold;
+    position: absolute;
+    transform: translateY(15px);
+    transition: all .3s ease;
+}
+
+.season_nb {
+    color: red;
+    font-size: 30px;
+    margin-top: 25px;
+    padding-bottom: 20px;
+    text-align: center;
+    font-style: italic;
+    font-weight: lighter;
+}
+
+.season_desc {
+    font-style: italic;
+    word-spacing: 5px;
+    line-height: 20px;
+    text-align: center;
+    font-weight: lighter;
+    letter-spacing: 1px;
+}
+
+.season-item-img {
+    transition: all .5s ease-in-out;
+    width: 300px;
+    height: 200px;
+    border-radius: 20px;
+    box-shadow:  -7px -7px 15px 2px rgb(34, 33, 33);
+}
+
+.season-item:hover .season-item-img {
+    transform: scale(1.1);
+    height: 230px;
+    width: 400px;
+    opacity: 0.2;
+}
+
+.season-item:hover .season-item-desc {
+    transform: translateY(-15px);
+    top: 0;
+}
+
+/* Popular Casts Section */
+
+.popular-casts{
+    align-items: center;
+    width: 100%;
+    height: 450px;
+    overflow-x: scroll;
+    overflow-y: hidden;
+    -webkit-overflow-scrolling: touch;
+    margin-top: 100px;
+    margin-bottom: -100px;
+}
+.popular-casts::-webkit-scrollbar {
+    display: none;
+}
+
+.actors{
+    display: flex;
+    width: auto;
+    white-space: nowrap;
+    height: 100%;
+}
+
+.actor{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin: 0 35px;
+    color: #ccc;
+    height: 100%;
+}
+
+.actor img{
+    width: 220px;
+    height: 260px;
+    border-radius: 50%;
+    object-fit: cover;
+}
+
+.actor span{
+    margin-top: 20px;
+    text-align: center;
+    color: white;
+    font-style: oblique;
+    font-size: large;
+    font-weight: 100;
+}
+
+.caption {
+    cursor: pointer;
+}
+
+.more-text {
+    display: none;
+}
+
+.episodes {
+    color: red;
+    display: none;
+    padding-top: 5px;
+}
+
+/* footer */
+
+footer{
+    position: absolute;
+    bottom: -1;
+    padding: 50px 4% 50px 16%;
+    width: 100%;
+    margin-top: 30px;
+    color: grey;
+    margin-left: auto;
+    background-color: rgb(0,0,0,0.8);
+}
+
+.footer{
+    margin-bottom: 10px;
+    position: relative;
+    font-size: small;
+    display: block;
+    padding-bottom: 20px;
+}
+
+footer a{
+    color: grey;
+    text-decoration: none;
+}
+
+footer a:hover{
+    text-decoration: underline;
+}
+
+.footer-list {
+    list-style: none;
+    margin: 0 auto;
+    padding: 0;
+}
+
+.footer-list li {
+    display: inline-block;
+    width: 30%;
+    font-size: xx-small;
+    margin-bottom: 10px;
+}

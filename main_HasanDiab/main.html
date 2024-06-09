@@ -1,0 +1,678 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="main.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.3.0/css/all.min.css" integrity="sha512-SzlrxWUlpfuzQ+pcUCosxcglQRNAq/DZjVsC0lE40xsADsfeQoEypE+enwcOiGjk/bSuGGKHEyjSoQ1zVisanQ==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <link rel="icon" href="media/netflix-icon.png">
+    <title>Netchill</title>
+    <style>
+        /* Embeded Styling */
+        * {
+            box-sizing: border-box;
+            margin: 0px;
+            scroll-behavior: smooth;
+            font-family: Arial, Helvetica, sans-serif;
+        }
+        
+        body {
+            background-color: black;
+            overflow-x: hidden; 
+        }
+        
+        header {
+            display: flex;
+            gap: 100px;
+            background: transparent;
+        }
+        
+        .slide-show {
+            display: flex;
+            width: 500vw;
+            overflow: hidden;
+        }
+        
+        .avengers{
+            background-image: linear-gradient(rgba(0,0,0,1),rgba(0,0,0,0.1),rgba(0,0,0,0.1),rgba(0,0,0,0.1),rgba(0,0,0,0.1),rgba(0,0,0,1)) , url(media/Avg.jpg);
+            width: 100vw;
+            height: 100vh;
+            background-position: center;
+            background-size: cover;
+            display: flex;
+            align-items: center;
+        }
+        
+        .your-name{
+            background-image: linear-gradient(rgba(0,0,0,1),rgba(0,0,0,0.1),rgba(0,0,0,0.1),rgba(0,0,0,0.1),rgba(0,0,0,0.1),rgba(0,0,0,1)) , url(media/YN2.jpg);
+            width: 100vw;
+            height: 100vh;
+            background-position: center;
+            background-size: cover;
+            display: flex;
+            align-items: center;
+        }
+        
+        .chess{
+            background-image: linear-gradient(rgba(0,0,0,1),rgba(0,0,0,0.1),rgba(0,0,0,0.1),rgba(0,0,0,0.1),rgba(0,0,0,0.1),rgba(0,0,0,1)) , url(media/TQG.webp);
+            width: 100vw;
+            height: 100vh;
+            background-position: center;
+            background-size: cover;
+            display: flex;
+            align-items: center;
+        }
+        
+        .arcane{
+            background-image: linear-gradient(rgba(0,0,0,1),rgba(0,0,0,0.1),rgba(0,0,0,0.1),rgba(0,0,0,0.1),rgba(0,0,0,0.1),rgba(0,0,0,1)) , url(media/Arcane2.jpg);
+            width: 100vw;
+            height: 100vh;
+            background-position: center;
+            background-size: cover;
+            display: flex;
+            align-items: center;
+        }
+        
+        .items{
+            margin-left: 35px;
+            height: fit-content;
+            width: 30%;
+            margin-top: 30px;
+            display: grid;
+            grid-template-columns: 100%;
+            gap: 40px;
+        }
+        
+        .items h1 {
+            font-weight: bolder;
+            font-size: 50px;
+        }
+        
+        .your-name h1{
+            line-height: 2;
+        }
+        
+        .arcane h1 {
+            line-height: 2.5;
+        }
+        
+        .buttons {
+            display: flex;
+            justify-content: space-between;
+            width: 250px;
+        }
+        
+        .buttons button {
+            cursor: pointer;
+            border-radius: 4px;
+            font-weight: bold;
+            width: 120px;
+            height: 35px;
+            border: none;
+            box-shadow: 0 5px 10px 4px rgb(0 0 0 / 0.8);
+        }
+        
+        
+        #info {
+            background-color: gray;
+            color: white;
+        }
+        
+        .items h3 i {
+            color: red;
+        }
+        
+        
+        .scroll {
+            width: fit-content;
+            height: fit-content;
+        }
+        
+        #logo {
+            width: 150px;
+            margin-top: 12px;
+            margin-left: -65px;
+            position: sticky;
+            z-index: 100000;
+        }
+        
+        .search {
+            align-self: center;
+            width: fit-content;
+            height: fit-content;
+            background-color: white;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+        
+        .list {
+            position: absolute;
+            top: 33.6px;
+            left: 0;
+            z-index: 1000;
+            width: 235px;
+        }
+        
+        .list-item {
+            width: 100%;
+            background: linear-gradient(rgba(0, 0, 0, 1), rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.4));
+            display: flex;
+            align-items: center;
+            cursor: pointer;
+            display: none;
+            overflow: hidden;
+            border-bottom-left-radius: 10px;
+            border-bottom-right-radius: 10px;
+        }
+        
+        .sbar{
+            margin-top: 10px;
+            position: relative;
+            margin-left: 300px;
+        }
+        
+        .list-item img{
+            width: 80px;
+            height: 100%;
+        }
+        
+        .list-item h3 {
+            padding-left: 7.5px;
+            padding-right: 7.5px;
+            width: fit-content;
+            text-shadow: 1px 1px 10px gray;
+        }
+        
+        /*#user {
+            margin-top: 207px;
+            display: flex;
+            align-items: center;
+        }
+        
+        .user {
+            border: 2px solid;
+            padding: 7px;
+            border-radius: 50%;
+            margin-right: -10px;
+        }*/
+        
+        .search i{
+            margin: 5px;
+            color: black;
+        }
+        
+        .search input{
+            outline: 0;
+            background-color: inherit;
+            border: none;
+            margin: 7px;
+            font-size: 15px;
+        }
+        
+        body::-webkit-scrollbar {
+            display: none;
+        }
+        
+        nav ul {
+            list-style: none;
+            display: flex;
+            flex-direction: column;
+            height: fit-content;
+            width: 250px;
+            background-color: black;
+            opacity: 0.9;
+            justify-content: space-between;
+            padding-bottom: 40px;
+            padding-left: 0px;
+            position: absolute;
+            top: 0px;
+            transform: translate(100vw);
+            z-index: 1000;
+        }
+        
+        nav ul a {
+            color: white;
+            text-decoration: none;
+        }
+        
+        nav ul li {
+            display: flex;
+            padding-top: 20px;
+            padding-bottom: 20px;
+            padding-left: 40px;
+            gap: 30px;
+            font-size: large;
+            transition: all .3s;
+        }
+        
+        nav i {
+            color: white;
+        }
+        
+        nav button {
+            width: 61px;
+            height: fit-content;
+            padding: 20px;
+            cursor: pointer;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            border-radius: 50%;
+            border: none;
+            font-weight: bold;
+            color: white;
+            font-size: large;
+            background-color: inherit;
+        }
+        
+        nav ul li:first-child {
+            padding-left: 20px;
+            padding-bottom: 0px;
+            padding-top: 0px;
+        }
+        
+        
+        nav ul li:not(:first-child):hover{
+            background-color: red;
+            padding-left: 50px;
+            cursor: pointer;
+        }
+        
+        nav ul li:last-child {
+            margin-bottom: calc(100vh - 406px);
+        }
+        
+        nav ul button:hover {
+            background-color: red;
+        }
+        
+        
+        .container {
+            height: 1200px;
+            min-height: calc(100vh - 50px);
+            color: white;
+        }
+        
+        .content-container {
+            margin-left: 50px;
+            margin-bottom: 20px;
+        }
+        
+        .news-container {
+            padding: 0 20px;
+        }
+        
+        .news-title{
+            margin-top: 30px;
+        }
+        
+        .news-wrapper {
+            position: relative;
+            overflow: auto;
+        }
+        
+        .news-wrapper::-webkit-scrollbar {
+            display: none;
+        }
+        
+        .news {
+            display: flex;
+            align-items: center;
+            height: 400px;
+            transform: translateX(0);
+            transition: all 1s ease-in-out;
+        }
+        
+        .news-item {
+            margin-right: 30px;
+            position: relative;
+        }
+        
+        .news-item-title{
+                padding: 0 20px;
+                font-size: 32px;
+                font-weight: bold;
+                position: relative;
+                transform: translateY(15px);
+                text-align: center;
+        }
+
+        #got {
+            font-size: 25px;
+            line-height: 1.5;
+        }
+        
+        .news-item:hover .news-item-img {
+            transform: scale(1.2);
+            margin: 10px 30px;
+            opacity: 0.5;
+        }
+        
+        .news-item-img {
+            transition: all .5s ease-in-out;
+            width: 270px;
+            height: 200px;
+            object-fit: cover;
+            border-radius: 20px;
+            box-shadow: 0 0 25px 8px rgb(128 128 128 / 0.2);
+        }
+        
+        .arrow {
+            font-size: 120px;
+            position: absolute;
+            top: 120px;
+            right: 0;
+            color: lightgray;
+            opacity: 0.5;
+            cursor: pointer;
+            z-index: 1000;
+        }
+        
+        .container.active {
+            color: white;
+        }
+        
+        footer{
+            position: absolute;
+            bottom: -1;
+            padding: 50px 4% 50px 16%;
+            width: 100%;
+            margin-top: 30px;
+            color: grey;
+            margin-left: auto;
+            background-color: rgb(0,0,0,0.8);
+        }
+        .footer{
+            margin-bottom: 10px;
+            position: relative;
+            font-size: medium;
+            display: block;
+            padding-bottom: 20px;
+        }
+        footer a{
+            color: grey;
+            text-decoration: none;
+        }
+        footer a:hover{
+            text-decoration: underline;
+        }
+        .footer-list {
+            list-style: none;
+            margin: 0 auto;
+            padding: 0;
+        }
+        
+        .footer-list li {
+            display: inline-block;
+            width: 20%;
+            font-size: xx-small;
+            margin-bottom: 10px;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <header>
+            <nav>
+                <ul>
+                    <li><button id="btn">X</button></li>
+                    <li><i class="fa-solid fa-right-to-bracket"></i><a href="../login_MohammadAlMousawi/login.html">Login</a></li>
+                    <li><i class="fa-solid fa-film"></i><a href="#">TV Shows</a></li>
+                    <li><i class="fa-solid fa-tv"></i><a href="#">Movies</a></li>
+                    <li><i class="fa-solid fa-newspaper"></i><a href="../exclusive news_IsraaAlZein/index.html">News</a></li>
+                    <li><i class="fa-solid fa-face-smile"></i><a href="../new_LoulouHallal/new/index.html">FAQ</a></li>
+                    <!-- <li id="user"><i class="fa-solid fa-user user"></i>UserName</li> -->
+                </ul>
+        </nav>
+        <a href="#"><img src="media/Webprojectlogo.png" alt="Net Chill" id="logo"></a>
+        <div class="sbar">
+            <div class="search">
+                <input type="text" placeholder="Enter Show/Movie">
+                <i class="fa-solid fa-magnifying-glass"></i>
+            </div>
+            <div class="list">
+                <div class="list-item">
+                    <img src="media/lucpos.webp" alt="">
+                    <h3>Lucifer</h3>
+                </div>
+                <div class="list-item">
+                    <img src="media/BBH.jpg" alt="">
+                    <h3>Breaking Bad</h3>
+                </div>
+                <div class="list-item">
+                    <img src="media/flash2.jpg" alt="">
+                    <h3>The Flash</h3>
+                </div>
+                <div class="list-item">
+                    <img src="media/morty.jpg" alt="">
+                    <h3>Rick & Morty</h3>
+                </div>
+                <div class="list-item">
+                    <img src="media/gotpos.jpeg" alt="family guy">
+                    <h3>Game Of Thrones</h3>
+                </div>
+                <div class="list-item">
+                    <img src="media/mh.jpg" alt="money heist">
+                    <h3>Money Heist</h3>
+                </div>
+                <div class="list-item">
+                    <img src="media/pbr.jpg" alt="prison break">
+                    <h3>Prison Break</h3>
+                </div>
+                <div class="list-item">
+                    <img src="media/pf.jpg" alt="pulp fiction">
+                    <h3>Pulp Fiction</h3>
+                </div>
+                <div class="list-item">
+                    <img src="media/avposter.jpg" alt="batman">
+                    <h3>Avatar</h3>
+                </div>
+                <div class="list-item">
+                    <img src="media/incept.jpg" alt="inception">
+                    <h3>Inception</h3>
+                </div>
+                <div class="list-item">
+                    <img src="media/hang.jpg" alt="hangover">
+                    <h3>The Hangover</h3>
+                </div>
+                <div class="list-item">
+                    <img src="media/inter.jpg" alt="interstellar">
+                    <h3>Interstellar</h3>
+                </div>
+                <div class="list-item">
+                    <img src="media/gf.jpg" alt="Godfather">
+                    <h3>The Godfather</h3>
+                </div>
+                <div class="list-item">
+                    <img src="media/jw.jpg" alt="John wick">
+                    <h3>John Wick</h3>
+                </div>
+            </div>
+        </div>
+    </header>
+    <main>
+        <div class="slide-show">
+            <div class="avengers">
+                <div class="items">
+                    <h1>Avengers: Infinity War</h1>
+                    <h3><i class="fa-solid fa-fire"></i>&nbsp;#1 in Movies Today</h3>
+                    <p>The Avengers must stop Thanos, an intergalactic warlord, from getting his hands on all the infinity stones. However, 
+                        Thanos is prepared to go to any lengths to carry out his insane plan.</p>
+                    <div class="buttons">
+                        <button id="avengers"><i class="fa-solid fa-play"></i> &nbsp;Play</button>
+                        <button id="info"><i class="fa-sharp fa-solid fa-circle-info"></i> &nbsp;More Info</button>
+                    </div>
+                </div>
+            </div>
+            <div class="your-name">
+                <div class="items">
+                    <h1>Your Name</h1>
+                    <h3><i class="fa-solid fa-fire"></i>&nbsp;#1 in Animated Movies Today</h3>
+                    <p>Two teenagers share a profound, magical connection upon discovering they are swapping bodies. 
+                        Things manage to become even more complicated when the boy and girl decide to meet in person.</p>
+                    <div class="buttons">
+                        <button id="avengers"><i class="fa-solid fa-play"></i> &nbsp;Play</button>
+                        <button id="info"><i class="fa-sharp fa-solid fa-circle-info"></i> &nbsp;More Info</button>
+                    </div>
+                </div>
+            </div>
+            <div class="chess">
+                <div class="items">
+                    <h1>The Queen's Gambit</h1>
+                    <h3><i class="fa-solid fa-fire"></i>&nbsp;#1 in TV Shows Today</h3>
+                    <p>Set during the Cold War era, orphaned chess prodigy Beth Harmon struggles with addiction in 
+                        a quest to become the greatest chess player in the world.</p>
+                        <div class="buttons">
+                            <button id="avengers"><i class="fa-solid fa-play"></i> &nbsp;Play</button>
+                            <button id="info"><i class="fa-sharp fa-solid fa-circle-info"></i> &nbsp;More Info</button>
+                        </div>
+                    </div>
+            </div>
+            <div class="arcane">
+                <div class="items">
+                    <h1>Arcane</h1>
+                    <h3><i class="fa-solid fa-fire"></i>&nbsp;#1 in Animated TV Shows Today</h3>
+                    <p>The origins of two iconic League champions, set in the utopian 
+                        Piltover and the oppressed underground of Zaun.</p>
+                        <div class="buttons">
+                            <button id="avengers"><i class="fa-solid fa-play"></i> &nbsp;Play</button>
+                            <button id="info"><i class="fa-sharp fa-solid fa-circle-info"></i> &nbsp;More Info</button>
+                        </div>
+                    </div>
+            </div>
+            <div class="avengers">
+                <div class="items">
+                    <h1>Avengers: Infinity War</h1>
+                    <h3><i class="fa-solid fa-fire"></i>&nbsp;#1 in Movies Today</h3>
+                    <p>The Avengers must stop Thanos, an intergalactic warlord, from getting his hands on all the infinity stones. However, 
+                        Thanos is prepared to go to any lengths to carry out his insane plan.</p>
+                    <div class="buttons">
+                        <button id="avengers"><i class="fa-solid fa-play"></i> &nbsp;Play</button>
+                        <button id="info"><i class="fa-sharp fa-solid fa-circle-info"></i> &nbsp;More Info</button>
+                    </div>
+                </div>
+            </div>
+        </div> 
+        <div class="content-container" id="series">
+            <div class="news-container">
+                <h1 class="news-title">TV Shows</h1>
+                <div class="news-wrapper">
+                    <div class="news">
+                        <div class="news-item">
+                            <img class="news-item-img" src="media/lucifer.webp" alt="">
+                            <div>
+                            <p class="news-item-title">Lucifer</p>
+                            </div>
+                        </div>
+                        <div class="news-item">
+                            <img class="news-item-img" src="media/Breaking.png" alt="">
+                            <div>
+                            <p class="news-item-title">Breaking Bad</p>
+                            </div>
+                        </div>
+                        <div class="news-item">
+                            <img class="news-item-img" src="media/theflash.jpg" alt="">
+                            <div>
+                            <p class="news-item-title">The Flash</p>
+                            </div>
+                        </div>
+                        <div class="news-item">
+                            <img class="news-item-img" src="media/got.jpg" alt="">
+                            <div>
+                            <p class="news-item-title" id="got">Game Of Thrones</span>
+                            </div>
+                        </div>
+                        <div class="news-item">
+                                <img class="news-item-img" src="media/rm.jpg" alt="">
+                            <div>
+                            <p class="news-item-title">Rick & Morty</p>
+                            </div>
+                        </div>
+                        <div class="news-item">
+                            <img class="news-item-img" src="media/money.jpg" alt="">
+                            <div>
+                                <p class="news-item-title">Money Heist</p>
+                            </div>
+                        </div>
+                        <div class="news-item">
+                            <img class="news-item-img" src="media/PB.jpg" alt="">
+                            <div>
+                                <p class="news-item-title">Prison Break</p>
+                            </div>
+                        </div>
+                    </div>
+                    <i class="fas fa-chevron-right arrow" id="arrow1"></i>
+                </div>
+            </div>
+        </div>
+        <div class="content-container movies" id="movies">
+            <div class="news-container">
+                <h1 class="news-title">Movies</h1>
+                <div class="news-wrapper">
+                    <div class="news">
+                        <div class="news-item">
+                            <img class="news-item-img" src="media/Pulp.png" alt="">
+                    <div>
+                        <p class="news-item-title">Pulp Fiction</p>
+                    </div>
+                    </div>
+                    <div class="news-item">
+                        <img class="news-item-img" src="media/avatar.jpg" alt="">
+                        <div>
+                            <p class="news-item-title">Avatar</p>
+                        </div>
+                    </div>
+                    <div class="news-item">
+                        <img class="news-item-img" src="media/Incep.jpg" alt="">
+                        <div>
+                            <p class="news-item-title">Inception</p>
+                        </div>
+                    </div>
+                    <div class="news-item">
+                    <img class="news-item-img" src="media/THO.jpg" alt="">
+                    <div>
+                        <p class="news-item-title">The Hangover</p>
+                    </div>
+                    </div>
+                    <div class="news-item">
+                        <img class="news-item-img" src="media/Interstellar.jpg" alt="">
+                        <div>
+                            <p class="news-item-title">Interstellar</p>
+                        </div>
+                    </div>
+                    <div class="news-item">
+                        <img class="news-item-img" src="media/TGF.jpg" alt="">
+                        <div>
+                            <p class="news-item-title">The Godfather</p>
+                        </div>
+                    </div>
+                    <div class="news-item">
+                        <img class="news-item-img" src="media/John.jpg" alt="">
+                        <div>
+                            <p class="news-item-title">John Wick</p>
+                        </div>
+                    </div>
+                    
+                    <i class="fas fa-chevron-right arrow" id="arrow2"></i>
+            </div>
+    </main>
+    <footer>
+        <div class="footer">
+            <a href="">Question? Conntact us.</a>
+        </div>
+        <ul class="footer-list">
+            <li><a href="../new_LoulouHallal/new/index.html">FAQ</a></li>
+            <li><a href="">Help Center</a></li>
+            <li><a href="">Terms of use</a></li>
+            <li><a href="">Privacy</a></li>
+            <li><a href="">Cookie Preferences</a></li>
+            <li><a href="">Corporate Information</a></li>
+        </ul>
+    </footer>
+    </div>
+    <script src="../JQuery/jquery-3.6.3.js"></script>
+    <script src="main.js"></script>
+</body>
+</html>

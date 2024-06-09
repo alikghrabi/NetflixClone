@@ -1,0 +1,304 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="icon" type="image/png" href="../Logo/N.png">
+    <link rel="stylesheet" href="../../css/aliSeries.css">
+    <link rel="stylesheet" href="../../css/webfonts/all.min.css">
+    <title>The Flash &#124; NeTCHILL</title>
+    <!-- Embbded Style-->
+    <style>
+        .more-text {
+            display: none;
+        }
+    
+        .more-link {
+            cursor: pointer;
+            color: blue;
+            text-decoration: underline;
+        }
+    </style>
+
+    <!-- JavaScript/jQuery -->
+    <script src="../../Javascript/jsjquery-3.6.0.min.js"></script>
+    <script>
+        $(document).ready(function() {
+            $(".more-link").click(function(event) {
+                event.preventDefault();
+                $(this).parent().next(".more-text").slideToggle(100);
+                $(this).css("display", "none");
+            });
+
+            $(".season-item").mouseenter(function () {
+                $(".more-link").css("display", "inline");
+            })
+
+            $(".season-item").mouseleave(function () {
+                $(".more-text").css("display", "none");
+            });
+            
+            $(".caption").click(function () {
+                $(this).next(".episodes").fadeToggle(500);
+            });
+        });
+    </script>
+</head>
+<body>
+    <header>
+        <img src="../Logo/Webprojectlogo.png" alt="NETCHILL_LOGO" width="200px" height="200px">
+    </header>
+
+
+    <nav>
+        <ul>
+            <li><button id="btn">X</button></li>
+            <li><i class="fa-solid fa-right-to-bracket"></i><a href="../../../../login_MohammadAlMousawi/login.html">Login</a></li>
+            <li><i class="fa-solid fa-film"></i><a href="../../../../main_HasanDiab/main.html#series">TV Shows</a></li>            
+            <li><i class="fa-solid fa-tv"></i><a href="../../../../main_HasanDiab/main.html#movies">Movies</a></li>
+            <li><i class="fa-solid fa-newspaper"></i><a href="../../../../exclusive news_IsraaAlZein/index.html">News</a></li>
+            <li><i class="fa-solid fa-face-smile"></i><a href="../../../../new_LoulouHallal/new/index.html">FAQ</a></li>
+        </ul>
+    </nav>
+
+
+    <main>
+        <div class="background-image-the-flash">
+            <div class="overlay-content">
+                <!-- Left side -->
+                <div class="left-side">
+                    <div class="left-side-image">
+                        <img  class="image" src="background/front.jpg" alt="Breaking_Bad_Front_Image">
+                        <div class="overlay-icons left-to-right">
+                            <a href="#"><b>10</b></a>
+                            <center class="under-icon"><em>Rate it</em></center>
+                            <a href="#"><i class="fa-solid fa-share"></i></a>
+                            <center class="under-icon"><em>Share this</em></center>
+                            <a href="#"><i class="fa-solid fa-heart-circle-plus"></i></a>
+                            <center class="under-icon"><em>Favorite</em></center>
+                        </div>
+                    </div>
+                </div>
+                <!-- Right side -->
+                <div class="right-side">
+                    <h1 class="series-title">The Flash</h1><br><br>
+                    <div class="icons-bar">
+                        <span class="icon-by-own">HD</span>
+                        <a href="#"><i class="fa-solid fa-video"></i></a>
+                        <small><em>Trailer</em></small>&nbsp; &nbsp; &nbsp; &nbsp;
+                        <span class="icon-by-own">IMDB</span>
+                        <small><em>8.3</em></small>
+                        <a href="#"><i class="fa-solid fa-hourglass-start"></i></a>
+                        <small><em>45 min</em></small>
+                    </div><br><br>
+                    <h2 class="series-overview">Overview</h2><br>
+                    <p>When a bolt of lightening crashes through a police crime lab, a mix of electrically charged substances bathes chemist Barry Allen, transforming him into the fastest man alive--The Flash.</p><br>
+                    <div class="row">
+                        <div class="column">
+                            <table class="table" border="1">
+                                <tr>
+                                    <td class="table_content_space"><b>Released </b></td>
+                                    <td class="table_content_space">1990-09-20</td>
+                                </tr>
+                                <tr>
+                                    <td class="table_content_space"><b>Genre </b></td>
+                                    <td class="table_content_space">Action & Adventure, Crime, Drama, Sci-Fi & Fantasy</td>
+                                </tr>
+                                <tr>
+                                    <td class="table_content_space"><b>Casts </b></td>
+                                    <td class="table_content_space">John Wesley Shipp, Amanda Pays, Alex Désert, Vito D'Ambrosio, Mike Genovese</td>
+                                </tr>
+                            </table>
+                        </div>
+                        <div class="column">
+                            <table  class="table" border="1">
+                                <tr>
+                                    <td class="table_content_space"><b>Duration </b></td>
+                                    <td class="table_content_space">45 min</td>
+                                </tr>
+                                <tr>
+                                    <td class="table_content_space" style="padding-bottom: 14px; padding-top: 14px;"><b>Country </b></td>
+                                    <td class="table_content_space">United States of America</td>
+                                </tr>
+                                <tr>
+                                    <td class="table_content_space" style="padding-bottom: 14px; padding-top: 14px;"><b>Production </b></td>
+                                    <td class="table_content_space">Pet Fly Productions, Warner Bros. Television</td>
+                                </tr>
+                            </table>
+                        </div>
+                    </div>
+                    <br><br><hr><br>
+                    <input type="button" class="buttons" value="watch The Flash online free QHD">
+                    <input type="button" class="buttons" value="watch The Flash movie FHD">
+                    <input type="button" class="buttons" value="The Flash movie online free HD">
+                </div>    
+            </div>
+        </div>
+
+        <div class="season-container"> 
+            <h1 class="season-title">Breaking Bad</h1><br>
+            <select id="myDropdown" style="font-weight: bold; font-size: 20px;">
+                <option>Season 1</option>
+                <option>Season 2</option>
+                <option>Season 3</option>
+                <option>Season 4</option>
+                <option>Season 5</option>
+            </select>
+            <div class="seasons-wrapper">
+                <div class="season-item">
+                    <img class="season-item-img" src="Seasons/season1.jpg" alt="The_Flash_Season_1" width="470px" height="100px">
+                    <div class="season-item-desc">
+                        <p class="season_nb">Season 1</p>
+                        <p class="season_desc">The Flash Season 1 follows Barry Allen, a forensic scientist who gains superhuman speed after being struck by lightning, as he uses his new powers to fight crime and search for answers about his past team at S.T.A.R. Labs, <a href="#" class="more-link">more</a></p>
+                        <p class="season_desc more-text">he faces off against various villains, including his arch-nemesis, the Reverse-Flash.</p>
+                    </div>
+                </div>
+                <div class="season-item">
+                    <img class="season-item-img" src="Seasons/season2.jpg" alt="The_Flash_Season_1">
+                    <div class="season-item-desc">
+                        <p class="season_nb">Season 2</p>
+                        <p class="season_desc">In The Flash Season 2, Barry and his team face new challenges as they deal with the consequences of altering the timeline, including the emergence of new metahumans and the appearance of a dangerous  villain <a href="#" class="more-link">more</a></p>
+                        <p class="season_desc more-text">known as Zoom. Meanwhile, Barry must also come to terms with his feelings for his best friend Iris and the arrival of his Earth-2 doppelganger.</p>
+                    </div>
+                </div>
+                <div class="season-item">
+                    <img class="season-item-img" src="Seasons/season3.jpg" alt="The_Flash_Season_1">
+                    <div class="season-item-desc">
+                        <p class="season_nb">Season 3</p>
+                        <p class="season_desc">In The Flash Season 3, Barry struggles to come to terms with the consequences of his decision to travel back in time and save his mother, leading to the emergence of a new timeline known as "Flashpoint." As he tries to set <a href="#" class="more-link">more</a></p>
+                        <p class="season_desc more-text">things right, Barry faces new threats, including the speedster villain Savitar and the enigmatic organization known as the "Philosopher's Stone."</p>
+                    </div>
+                </div>
+                <div class="season-item">
+                    <img class="season-item-img" src="Seasons/season4.jpg" alt="The_Flash_Season_1">
+                    <div class="season-item-desc">
+                        <p class="season_nb">Season 4</p>
+                        <p class="season_desc">The Flash Season 4 sees Barry and his team deal with the consequences of their victory over Savitar, as a new threat emerges in the form of the dangerous Thinker, a metahuman with vast intelligence and psychic powers. <a href="#" class="more-link">more</a></p>
+                        <p class="season_desc more-text">Meanwhile, Barry struggles to balance his duties as the Flash with his personal life, including his relationship with Iris and the arrival of his daughter from the future, Nora West-Allen.</p>
+                    </div>
+                </div>
+                <div class="season-item">
+                    <img class="season-item-img" src="Seasons/season5.jpg" alt="The_Flash_Season_1">
+                    <div class="season-item-desc">
+                        <p class="season_nb">Season 5</p>
+                        <p class="season_desc">The Flash Season 5 follows Barry and his team as they face off against a new threat, Cicada, a metahuman with the ability to dampen other metahuman powers. Alongside this, they must also deal with the arrival of <a href="#" class="more-link">more</a></p>
+                        <p class="season_desc more-text">Barry ,Nora, and unravel the mystery of her presence in their timeline.</p>
+                    </div>
+                </div>
+                <div class="season-item">
+                    <img class="season-item-img" src="Seasons/season6.jpg" alt="The_Flash_Season_1">
+                    <div class="season-item-desc">
+                        <p class="season_nb">Season 6</p>
+                        <p class="season_desc">In The Flash Season 6, Barry and his team deal with the aftermath of the Crisis on Infinite Earths, as they navigate a new reality where the multiverse no longer exists. Alongside this, they must face off against a new threat in the <a href="#" class="more-link">more</a></p>
+                        <p class="season_desc more-text">form of Bloodwork, a metahuman with the ability to manipulate blood, and later the villainous organization known as Black Hole.</p>
+                    </div>
+                </div>
+                <div class="season-item">
+                    <img class="season-item-img" src="Seasons/season7.jpg" alt="The_Flash_Season_1">
+                    <div class="season-item-desc">
+                        <p class="season_nb">Season 7</p>
+                        <p class="season_desc">In The Flash Season 7, Barry and his team confront the aftermath of Eva McCulloch's Mirrorverse plot, which caused Barry to be trapped in the Speed Force. As they work to bring him back, they must also deal with the <a href="#" class="more-link">more</a></p>
+                        <p class="season_desc more-text">return of Godspeed, the emergence of new forces, and the arrival of a mysterious new villain known as "Fuerza."</p>
+                    </div>
+                </div>
+                <div class="season-item">
+                    <img class="season-item-img" src="Seasons/season8.webp" alt="The_Flash_Season_1">
+                    <div class="season-item-desc">
+                        <p class="season_nb">Season 8</p>
+                        <p class="season_desc">The season follows Barry facing against his nemesis the Reverse-Flash, the fire Meta Deathstorm and the Negative Speed Force. The season starts out with the Arrowverse crossover, “Armageddon”. It is set in <a href="#" class="more-link">more</a></p>
+                        <p class="season_desc more-text">the Arrowverse, sharing continuity with the other television series of the universe, and is a spin-off of Arrow.</p>
+                    </div>
+                </div>
+                <div class="season-item">
+                    <img class="season-item-img" src="Seasons/season9.webp" alt="The_Flash_Season_1">
+                    <div class="season-item-desc">
+                        <p class="season_nb">Season 9</p>
+                        <p class="season_desc">In the final season, After being struck by lightning, Barry Allen (Grant Gustin) is reborn. Now having super speed, he has a new name. The Flash. With the help of his friends, he fights crime and find other metahumans like him.<a href="#" class="more-link">more</a></p>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+
+
+        <h1 class="season-title" style="margin-top: 100px; margin-bottom: -50px;">Popular Casts</h1>
+        <div class="popular-casts">
+            <div class="actors">
+                <div class="actor">
+                    <img src="Casts/Grant Gustin as Barry Allen.jpg" alt="Grant Gustin as Barry Allen">
+                    <span class="caption">Grant Gustin </span>
+                    <p class="episodes">as Barry Allen &#124; 49 Episodes</p>
+                </div>
+                <div class="actor">
+                    <img src="Casts/Candice Patton as Iris West-Allen.jpg" alt="Candice Patton as Iris West-Allen">
+                    <span class="caption">Candice Patton </span>
+                    <p class="episodes">as Iris West-Allen &#124; 149 Episodes</p>
+                </div>
+                <div class="actor">
+                    <img src="Casts/Danielle Panabaker as Caitlin Snow.jpg" alt="Danielle Panabaker as Caitlin Snow">
+                    <span class="caption">Danielle Panabaker </span>
+                    <p class="episodes">as Caitlin Snow &#124; 149 Episodes</p>
+                </div>
+                <div class="actor">
+                    <img src="Casts/Carlos Valdes as Cisco Ramon.jpg" alt="Carlos Valdes as Cisco Ramon">
+                    <span class="caption">Carlos Valdes </span>
+                    <p class="episodes">as Cisco Ramon134 Episodes</p>
+                </div>
+                <div class="actor">
+                    <img src="Casts/Tom Cavanagh as various characters.jpg" alt="Tom Cavanagh as various characters">
+                    <span class="caption">Tom Cavanagh </span>
+                    <p class="episodes">as various characters &#124; 131 Episodes</p>
+                </div>
+                <div class="actor">
+                    <img src="Casts/Jesse L. Martin as Joe West.webp" alt="Jesse L. Martin as Joe West">
+                    <span class="caption">Jesse L. Martin </span>
+                    <p class="episodes">as Joe West &#124; 125 Episodes</p>
+                </div>
+                <div class="actor">
+                    <img src="Casts/Wade Williams (Captain Brad Bellick).jpg" alt="Wade Williams (Captain Brad Bellick)">
+                    <span class="caption">Wade Williams </span>
+                    <p class="episodes">as Captain Brad Bellick &#124; 54 Episodes</p>
+                </div>
+                <div class="actor">
+                    <img src="Casts/Keiynan Lonsdale as Wally West.jpg" alt="Keiynan Lonsdale as Wally West / Kid Flash">
+                    <span class="caption">Keiynan Lonsdale </span>
+                    <p class="episodes">as Wally West / Kid Flash &#124; 39 Episodes</p>
+                </div>
+                <div class="actor">
+                    <img src="Casts/Hartley Sawyer as Ralph Dibny.jpg" alt="Hartley Sawyer as Ralph Dibny / Elongated Man">
+                    <span class="caption">Hartley Sawyer </span>
+                    <p class="episodes">as Ralph Dibny / Elongated Man &#124; 29 Episodes</p>
+                </div>
+                <div class="actor">
+                    <img src="Casts/Danielle Nicolet as Cecile Horton.webp" alt="Danielle Nicolet as Cecile Horton">
+                    <span class="caption">Danielle Nicolet </span>
+                    <p class="episodes">as Cecile Horton &#124; 57 Episodes</p>
+                </div>
+                <div class="actor">
+                    <img src="Casts/Rick Cosnett as Eddie Thawne.jpg" alt="Rick Cosnett as Eddie Thawne">
+                    <span class="caption">Rick Cosnett </span>
+                    <p class="episodes">as Eddie Thawne &#124; 15 Episodes</p>
+                </div>
+            </div>
+        </div>
+
+    </main> 
+
+    <footer>
+            <div class="footer">
+                <a href="">Question? Conntact us.</a>
+            </div>
+            <ul class="footer-list">
+                <li><a href="../../../../new_LoulouHallal/new/index.html">FAQ</a></li>
+                <li><a href="">Help Center</a></li>
+                <li><a href="">Terms of use</a></li>
+                <li><a href="">Privacy</a></li>
+                <li><a href="">Cookie Preferences</a></li>
+                <li><a href="">Corporate Information</a></li>
+            </ul>
+    </footer>
+    <script src="../../Javascript/aliSeries.js"></script>
+    
+</body>
+</html>
